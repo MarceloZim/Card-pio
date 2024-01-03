@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("food")
+@RequestMapping("/food")
 public class FoodController {
 
     @Autowired
     private FoodRepository foodRepository;
-    @GetMapping
+
+    @GetMapping(value = "/getFood")
     public List<FoodResponseDTO> getAll(){
         return foodRepository.findAll().stream().map(FoodResponseDTO::new).toList();
     }

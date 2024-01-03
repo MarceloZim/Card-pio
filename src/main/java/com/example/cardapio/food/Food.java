@@ -15,10 +15,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Food {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
     private String image;
     private Integer price;
